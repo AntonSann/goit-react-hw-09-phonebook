@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { authSelectors, authOperations } from '../../Redux/Auth';
 import defaultAvatar from './default-avatar.png';
@@ -21,7 +21,7 @@ export default function UserMenu() {
 
 const name = useSelector(authSelectors.getUsername)
 const dispatch = useDispatch();
-const onLogout = () => dispatch(authOperations.logOut());
+const onLogout = useCallback (() => dispatch(authOperations.logOut()), [dispatch]);
   return(
     <div style={styles.container}>
       <img src={defaultAvatar} alt="" width="32" style={styles.avatar} />
