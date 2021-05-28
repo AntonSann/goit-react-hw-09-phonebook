@@ -17,7 +17,7 @@ const styles = {
 };
 
 export default function Navigation() {
-  const isAuthenticated = useSelector(authSelectors.getIsAuthenticated)
+  const isAuthenticated = useSelector(authSelectors.getIsAuthenticated);
   return (
     <nav>
       <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
@@ -31,7 +31,6 @@ export default function Navigation() {
       >
         Контакты
       </NavLink>}
-  
     </nav>
   );  
 };
